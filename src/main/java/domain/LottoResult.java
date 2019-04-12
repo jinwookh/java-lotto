@@ -15,6 +15,7 @@ public class LottoResult {
     static final String COUNT = "개";
     static final String PROFIT_RATE_IS = "총 수익률은 ";
     static final String THIS = "%입니다.";
+    static final String WON = "원";
 
 
     Map<Rank, Integer> rankMap;
@@ -87,7 +88,7 @@ public class LottoResult {
     }
 
     private String stringOfOneRankResult(Rank rank) {
-        String string = rank.getWinningMoney() + BETWEEN_WORDS + rankMap.get(rank) + COUNT;
+        String string = rank.getWinningMoney() +WON+ BETWEEN_WORDS + rankMap.get(rank) + COUNT;
         if (rank == Rank.SECOND) {
             string = rank.getCountOfMatch() + HOW_MANY_SECOND + string;
             return string;
