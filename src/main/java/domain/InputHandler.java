@@ -8,7 +8,7 @@ public class InputHandler {
     private static final String ASK_PURCHASE_AMOUNT
             = "구입금액을 입력해 주세요.";
     private static final String ASK_WINNING_LOTTO
-            = "지난 주 당첨 번호를 입력해 주세요.";
+            = "\n지난 주 당첨 번호를 입력해 주세요.";
     private static final String WINNINIG_LOTTO_ERROR
             = "쉼표로 구분된 6개의 로또 번호(1~45)를 입력해 주세요.";
     private static final String ASK_BONUS_NUMBER

@@ -18,6 +18,7 @@ public class PurchaseLottoList {
     }
 
     private static void show(List<Lotto> lottos) {
+        System.out.println();
         System.out.println(lottos.size() + INITIAL_COMMENT);
         for (Lotto lotto : lottos
         ) {

@@ -64,7 +64,13 @@ public class LottoResult {
     }
 
     public double profitRate() {
+        int integer = (int)(prizeAmount() / purchaseAmount() * 10000);
+        double profitRate = integer / 100.0;
 
-        return prizeAmount() / purchaseAmount() * 100;
+        return profitRate;
+    }
+
+    public void show() {
+        LottoResultString.show(lottoResultMap, profitRate());
     }
 }

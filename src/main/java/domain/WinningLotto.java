@@ -26,6 +26,7 @@ public class WinningLotto {
         return Lotto.COUNT_OF_NUMBERS * 2 - set.size();
     }
 
+
     @Override
     public String toString() {
         return winningLotto.toString() + bonusNumber;
