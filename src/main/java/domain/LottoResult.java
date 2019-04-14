@@ -43,4 +43,28 @@ public class LottoResult {
             System.out.println("" +rank + lottoResultMap.get(rank));
         }
     }
+
+    private double purchaseAmount() {
+        double count = 0;
+        for (Rank rank : Rank.values()) {
+            count += lottoResultMap.get(rank);
+        }
+
+        return count * 1000;
+    }
+
+    private double prizeAmount() {
+        double prizeAmount = 0;
+        for (Rank rank : Rank.values()
+             ) {
+            prizeAmount += rank.prizeIs() * lottoResultMap.get(rank);
+        }
+
+        return prizeAmount;
+    }
+
+    public double profitRate() {
+
+        return prizeAmount() / purchaseAmount() * 100;
+    }
 }
