@@ -11,17 +11,21 @@ public class BonusNumber {
         bonusNumber = Integer.parseInt(input);
     }
 
-    boolean checkValidity(String input, Lotto lotto) {
+    private boolean checkValidity(String input, Lotto lotto) {
         int number = Integer.parseInt(input);
         return checkValidity(number, lotto);
     }
 
-    boolean checkValidity(int number, Lotto lotto) {
+    private boolean checkValidity(int number, Lotto lotto) {
         if (number < Lotto.MIN || number > Lotto.MAX) {
             throw new IllegalArgumentException();
         }
 
         return lotto.hasNumber(number) == false;
+    }
+
+    int is() {
+        return bonusNumber;
     }
 
 
