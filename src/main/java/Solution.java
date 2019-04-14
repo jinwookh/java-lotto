@@ -13,5 +13,6 @@ public class Solution {
 
         PurchaseLottoList.is(8000);
 
+        System.out.println(Rank.valueOf(6,false));
     }
 }
