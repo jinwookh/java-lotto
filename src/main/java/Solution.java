@@ -3,7 +3,8 @@ import domain.*;
 public class Solution {
 
     public static void main(String[] args) {
-        System.out.println(InputHandler.getPurchaseAmount());
+
+        LottoInput.checkValidity("1,1,2,4,5,6", ",");
 
     }
 }
