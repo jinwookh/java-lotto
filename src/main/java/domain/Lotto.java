@@ -1,7 +1,9 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Lotto {
     public static final int PRICE = 1000;
@@ -13,7 +15,7 @@ public class Lotto {
 
     public Lotto(List<Integer> numbers) {
         if (numbers.size() != COUNT_OF_NUMBERS) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("로또 개수는 6이어야 합니다.");
         }
         lottoNumbers = numbers;
     }
@@ -23,16 +25,24 @@ public class Lotto {
     }
 
     public static Lotto isGenerated() {
-        List<Integer> numbers = new ArrayList<>();
-        for (int i = 0; i < COUNT_OF_NUMBERS; i++) {
-            numbers.add(getRandomLottoNumber());
+        Set<Integer> set = new HashSet<>();
+        while (set.size() < COUNT_OF_NUMBERS) {
+            set.add(getRandomLottoNumber());
         }
-        return new Lotto(numbers);
+        List<Integer> list = new ArrayList<>();
+        list.addAll(set);
+
+        return new Lotto(list);
     }
 
     private static int getRandomLottoNumber() {
         int randomNumber = (int) (Math.random() * (MAX - MIN + 1) + MIN);
         return randomNumber;
+    }
+
+
+    public List<Integer> numbersAre() {
+        return lottoNumbers;
     }
 
     @Override
