@@ -4,7 +4,8 @@ public class Solution {
 
     public static void main(String[] args) {
 
-        System.out.println(InputHandler.getWinningLotto());
+        Lotto lotto = InputHandler.getWinningLotto();
+        BonusNumber bonusNumber = new BonusNumber(" 3 ", lotto);
 
     }
 }

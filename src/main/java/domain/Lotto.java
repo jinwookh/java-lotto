@@ -10,11 +10,15 @@ public class Lotto {
 
     private List<Integer> lottoNumbers;
 
-    Lotto(List<Integer> numbers) {
+    public Lotto(List<Integer> numbers) {
         if (numbers.size() != COUNT_OF_NUMBERS) {
             throw new IllegalArgumentException();
         }
         lottoNumbers = numbers;
+    }
+
+    public boolean hasNumber(int number) {
+        return lottoNumbers.contains(number);
     }
 
     @Override
