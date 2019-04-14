@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Lotto {
@@ -19,6 +20,19 @@ public class Lotto {
 
     public boolean hasNumber(int number) {
         return lottoNumbers.contains(number);
+    }
+
+    public static Lotto isGenerated() {
+        List<Integer> numbers = new ArrayList<>();
+        for (int i = 0; i < COUNT_OF_NUMBERS; i++) {
+            numbers.add(getRandomLottoNumber());
+        }
+        return new Lotto(numbers);
+    }
+
+    private static int getRandomLottoNumber() {
+        int randomNumber = (int) (Math.random() * (MAX - MIN + 1) + MIN);
+        return randomNumber;
     }
 
     @Override
