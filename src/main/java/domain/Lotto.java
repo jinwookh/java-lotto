@@ -10,4 +10,15 @@ public class Lotto {
 
     private List<Integer> lottoNumbers;
 
+    Lotto(List<Integer> numbers) {
+        if (numbers.size() != COUNT_OF_NUMBERS) {
+            throw new IllegalArgumentException();
+        }
+        lottoNumbers = numbers;
+    }
+
+    @Override
+    public String toString() {
+        return lottoNumbers.toString();
+    }
 }
