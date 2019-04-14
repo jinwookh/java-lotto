@@ -13,9 +13,9 @@ public enum Rank {
 
     private int number;
     private int prize;
-    private boolean hasBonus;
 
-    private Rank(int number, int prize) {
+
+    Rank(int number, int prize) {
         this.number = number;
         this.prize = prize;
     }
